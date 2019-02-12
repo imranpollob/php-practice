@@ -11,7 +11,7 @@ class QueryBuilder
 
     public function all($table)
     {
-        $query = $this->pdo->prepare("SELECT * FROM tasks");
+        $query = $this->pdo->prepare("SELECT * FROM $table");
         $query->execute();
         return $query->fetchAll();
     }
