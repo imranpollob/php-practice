@@ -1,6 +1,6 @@
 <?php
 
-require "bootstrap.php";
+$queryBuilder = require "bootstrap.php";
 require "Task.php";
 
 $tasks = [
@@ -11,7 +11,6 @@ $tasks = [
 
 $tasks[0]->makeComplete();
 
-$qb = new QueryBuilder(Connection::make());
-$dbTasks = $qb->all('tasks');
+$dbTasks = $queryBuilder->selectAll('tasks');
 
 require "index.view.php";
