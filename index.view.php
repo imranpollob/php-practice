@@ -11,22 +11,11 @@
 
     <ul>
         <?php foreach ($tasks as $task) : ?>
-            <?php if ($task->complete()) : ?>
+            <?php if ($task->is_completed) : ?>
                 <strike><li><?= $task->description ?></li></strike>
             <?php else : ?>
                 <li><?= $task->description ?></li>
             <?php endif ?>
-        <?php endforeach ?>
-    </ul>
-
-    <ul>
-        <?php foreach ($dbTasks as $task) : ?>
-            <?php if ($task["is_completed"]) : ?>
-                <strike><li><?= $task["description"] ?></li></strike>
-            <?php else : ?>
-                <li><?= $task["description"] ?></li>
-            <?php endif ?>
-            
         <?php endforeach ?>
     </ul>
 </body>
